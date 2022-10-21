@@ -177,7 +177,7 @@ tbl_likert <- function(data,
       result %>%
       gtsummary::modify_table_body(
         ~dplyr::left_join(
-          df_means %>% select(.data$variable),
+          df_means %>% select("variable"),
           .x,
           by = "variable"
         )
